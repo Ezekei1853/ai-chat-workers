@@ -1,0 +1,14 @@
+{
+  "name": "ai-chat-workers",
+  "version": "1.0.0",
+  "description": "AI Chat API Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250905.0",
+    "wrangler": "^4.34.0"
+  }
+}
