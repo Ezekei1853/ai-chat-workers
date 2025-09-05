@@ -134,6 +134,7 @@ const resolvers = {
 
         // 检查 API Key
         if (!env.DEEPSEEK_API_KEY) {
+          
           throw new Error('DeepSeek API密钥未配置');
         }
 
