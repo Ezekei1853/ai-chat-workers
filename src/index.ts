@@ -5,22 +5,22 @@ interface Env {
   DEEPSEEK_API_KEY: string; // DeepSeek API密钥环境变量
 }
 
-interface ChatRequest {
-  message: string;
-}
+// interface ChatRequest {
+//   message: string;
+// }
 
-interface ChatResponse {
-  reply: string;
-  timestamp: string;
-}
+// interface ChatResponse {
+//   reply: string;
+//   timestamp: string;
+// }
 
-interface HealthResponse {
-  status: string
-}
+// interface HealthResponse {
+//   status: string
+// }
 
-interface ErrorResponse {
-  error: string;
-}
+// interface ErrorResponse {
+//   error: string;
+// }
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
@@ -65,6 +65,9 @@ export default {
       
       if (path === '/chat/history' && request.method === 'GET') {
         return await handleChatHistory(request, corsHeaders);
+      }
+      if (path === '/chat/history' && request.method === 'DELETE') {
+        return await handleDeleteHistory(request, corsHeaders);
       }
 
       // 404 处理
@@ -236,7 +239,7 @@ async function handleDeleteHistory(request: Request, corsHeaders: Record<string,
         ...corsHeaders,
       },
     });
-  } catch (error) {
+  } catch (error:any) {
     return new Response(JSON.stringify({ 
       error: 'Failed to delete history',
       message: error.message 
