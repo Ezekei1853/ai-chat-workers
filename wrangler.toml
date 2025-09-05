@@ -1,9 +1,0 @@
-name = "ai-chat-app"
-main = "src/index.ts"
-compatibility_date = "2025-09-05"
-
-[env.production]
-secrets = ["DEEPSEEK_API_KEY"]
-
-[env.development] 
-secrets = ["DEEPSEEK_API_KEY"]

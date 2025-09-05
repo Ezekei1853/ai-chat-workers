@@ -1,0 +1,17 @@
+{
+    "name": "ai-chat-app",
+    "main": "src/index.ts",
+    "compatibility_date": "2023-05-18",
+    "env": {
+      "production": {
+        "secrets": [
+          "DEEPSEEK_API_KEY"
+        ]
+      },
+      "development": {
+        "secrets": [
+          "DEEPSEEK_API_KEY"
+        ]
+      }
+    }
+  }
