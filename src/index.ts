@@ -16,7 +16,7 @@ interface ChatResponse {
 }
 
 interface HealthResponse {
-  status: string;
+  status: string
 }
 
 interface ErrorResponse {
