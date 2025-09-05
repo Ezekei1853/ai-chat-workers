@@ -44,7 +44,20 @@ export default {
     try {
       const url = new URL(request.url);
       const path = url.pathname;
-
+     
+      if (path === '/' && request.method === 'GET') {
+        return new Response(JSON.stringify({
+          status: 'ok',
+          message: 'AI Chat API is running',
+          timestamp: new Date().toISOString(),
+          version: '1.0.0'
+        }), {
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        });
+      }
       // 路由处理
       if (path === '/chat' && request.method === 'POST') {
         return await handleChat(request, corsHeaders);
