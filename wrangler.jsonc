@@ -1,6 +1,6 @@
 
 {
-    "name": "ai-chat-workers",
+    "name": "ai-chatapp-workers",
     "compatibility_date": "2025-09-05",
     "main": "src/index.ts"
   }
